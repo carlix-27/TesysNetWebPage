@@ -2,7 +2,7 @@ package com.tesys.netwebpage.exception;
 
 public class CharacterNotFoundException extends RuntimeException {
 
-    public CharacterNotFoundException(Long id) {
+    public CharacterNotFoundException(Integer id) {
         super("Character with id " + id + " not found");
     }
 }
