@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tesys.netwebpage.dto.CharacterApiDto;
-import com.tesys.netwebpage.exception.CharacterNotFoundException;
+import com.tesys.netwebpage.model.Character;
 import com.tesys.netwebpage.repository.CharacterRepository;
 import com.tesys.netwebpage.service.CharacterService;
 

@@ -2,6 +2,7 @@ package com.tesys.netwebpage.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -17,10 +18,14 @@ public class CharacterService {
     
     private final RestTemplate restTemplate = new RestTemplate();
 
+    // lee el valor directamente del application.properties
+    @Value("${external.api.character.url}")
+    private String characterApiUrl;
+
     // aca me comunico con la api externa para traer a todos los personajes!
     public List<CharacterApiDto> getCharacters() {
         RickAndMortyResponse response = 
-            restTemplate.getForObject(System.getenv("CHARACTER_URL"), RickAndMortyResponse.class);
+            restTemplate.getForObject(characterApiUrl, RickAndMortyResponse.class);
 
         return response.getResults();
     }
@@ -30,7 +35,7 @@ public class CharacterService {
     public CharacterApiDto getCharacterById(Integer id) {
         try {
             return restTemplate.getForObject(
-                System.getenv("CHARACTER_URL") + "/" + id,
+                characterApiUrl  + "/" + id,
                 CharacterApiDto.class
             );
         } catch (HttpClientErrorException.NotFound ex) {
