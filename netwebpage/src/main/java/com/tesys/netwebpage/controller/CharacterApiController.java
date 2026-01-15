@@ -14,13 +14,13 @@ import com.tesys.netwebpage.service.CharacterService;
 
 @RestController
 @RequestMapping("/character")
-public class CharacterController {
+public class CharacterApiController {
 
     private final CharacterRepository characterRepository;
     
     private final CharacterService characterService;
 
-    public CharacterController(CharacterService service, CharacterRepository characterRepository){
+    public CharacterApiController(CharacterService service, CharacterRepository characterRepository){
         this.characterService = service;
         this.characterRepository = characterRepository;
     }
