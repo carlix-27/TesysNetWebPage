@@ -1,7 +1,11 @@
 package com.tesys.netwebpage.service;
 
+import org.springframework.stereotype.Service;
+
 import com.tesys.netwebpage.dto.RegisterRequest;
 import com.tesys.netwebpage.model.User;
+import com.tesys.netwebpage.repository.UserRepository;
+import com.tesys.netwebpage.security.JwtService;
 
 @Service
 public class AuthService {
