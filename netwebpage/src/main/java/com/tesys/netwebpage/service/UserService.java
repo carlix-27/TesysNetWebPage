@@ -1,8 +1,10 @@
 package com.tesys.netwebpage.service;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.tesys.netwebpage.model.User;
 import com.tesys.netwebpage.repository.UserRepository;
-import org.springframework.stereotype.Service;
 
 
 @Service

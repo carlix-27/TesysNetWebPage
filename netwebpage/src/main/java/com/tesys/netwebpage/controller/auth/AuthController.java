@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tesys.netwebpage.dto.AuthResponse;
 import com.tesys.netwebpage.dto.LoginRequest;
 import com.tesys.netwebpage.dto.RegisterRequest;
+import com.tesys.netwebpage.service.AuthService;
 
 @RestController
 @RequestMapping("/auth")
